@@ -14,6 +14,7 @@ struct ContentView: View {
     @State private var correctAnswer = Int.random(in: 0...2) //There'll be 3 different flags at the same time, the correct one is either 0, 1 or 2
     @State private var totalScore = 0
     @State private var tappedFlag = 0
+    @State private var qCounter = 1
     
     var body: some View {
         ZStack {
@@ -67,11 +68,18 @@ struct ContentView: View {
                 Spacer()
             }
             .padding()
-            .alert(scoreTitle, isPresented: $showingScore) {
+        }
+        .alert(scoreTitle, isPresented: $showingScore) {
+            if qCounter != 8 {
                 Button("Continue", action: askQuestion)
-            } message: {
+            } else {
+                Button("Restart", action: restartGame)
+            }
+        } message: {
+            if qCounter != 8 {
                 Text("Your score is \(totalScore)")
-                    .foregroundColor(.white)
+            } else {
+                Text("Your final score is \(totalScore). Press restart to reset the game")
                 
             }
         }
@@ -91,10 +99,15 @@ struct ContentView: View {
     func askQuestion() {
         countries.shuffle()
         correctAnswer = Int.random(in: 0...2)
+        qCounter += 1
+    }
+        func restartGame() {
+            countries.shuffle()
+            correctAnswer = Int.random(in: 0...2)
+            qCounter = 1
+            totalScore = 0
     }
 }
-
-
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
