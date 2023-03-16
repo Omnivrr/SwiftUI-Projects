@@ -11,6 +11,7 @@
 		19E3335829C349EB004CE86E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19E3335729C349EB004CE86E /* ContentView.swift */; };
 		19E3335A29C349F0004CE86E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 19E3335929C349F0004CE86E /* Assets.xcassets */; };
 		19E3335D29C349F0004CE86E /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 19E3335C29C349F0004CE86E /* Preview Assets.xcassets */; };
+		19E3336829C361A8004CE86E /* SleepCalculator.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 19E3336729C361A8004CE86E /* SleepCalculator.mlmodel */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +20,7 @@
 		19E3335729C349EB004CE86E /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		19E3335929C349F0004CE86E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		19E3335C29C349F0004CE86E /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		19E3336729C361A8004CE86E /* SleepCalculator.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = SleepCalculator.mlmodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +56,7 @@
 				19E3335529C349EB004CE86E /* BetterRestApp.swift */,
 				19E3335729C349EB004CE86E /* ContentView.swift */,
 				19E3335929C349F0004CE86E /* Assets.xcassets */,
+				19E3336729C361A8004CE86E /* SleepCalculator.mlmodel */,
 				19E3335B29C349F0004CE86E /* Preview Content */,
 			);
 			path = BetterRest;
@@ -139,6 +142,7 @@
 			files = (
 				19E3335829C349EB004CE86E /* ContentView.swift in Sources */,
 				19E3335629C349EB004CE86E /* BetterRestApp.swift in Sources */,
+				19E3336829C361A8004CE86E /* SleepCalculator.mlmodel in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
