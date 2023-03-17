@@ -14,6 +14,7 @@ struct ContentView: View {
     @State private var errorTitle = ""
     @State private var errorMessage = ""
     @State private var showingError = false
+    @State private var playerScore = 0
     
     var body: some View {
         NavigationView {
@@ -27,21 +28,28 @@ struct ContentView: View {
                     ForEach(usedWords, id: \.self) {word in
                         HStack {
                             Image(systemName: "\(word.count).circle")
-                            Text(word)
+                            Text(word) // this goes through the used words and displays them in the section
                         }
                     }
                 }
+                Section("Score") {
+                    Text("\(playerScore)")
+                }
             }
             .navigationTitle(rootWord)
-            .onSubmit(addNewWord)
-            //after creating a function to load everything for the game, I need to call it here. SwiftUI gives a dedicated view modifier for running a closure when a view is shown.
+            .onSubmit(addNewWord) //after a player types in a word and enters it, the word that is entered get added to the array.
+
             
-            .onAppear(perform: startGame)
+            .onAppear(perform: startGame)  //after creating a function to load everything for the game, I need to call it here. SwiftUI gives a dedicated view modifier for running a closure when a view is shown.
             //this alert modifier will allow title, message and error to be passed directly to swiftui
             .alert(errorTitle, isPresented: $showingError) {
                 Button("OK", role: .cancel) {}
             } message: {
                 Text(errorMessage)
+            }
+            .toolbar {
+                Button("New Game", action: startGame)
+            
             }
         }
     }
@@ -64,10 +72,17 @@ struct ContentView: View {
             wordError(title: "Word not recognized", message: "You can't just them up, you know!")
             return
         }
+    
+        guard answer.count >= 3 else {
+            wordError(title: "Word is too short", message: "Enter a word that is t least 4 characters long!")
+            return
+            
+        }
         
         withAnimation {
             usedWords.insert(answer, at:0)
         }
+        scoreCalculation()
         newWord = ""
     }
     
@@ -81,6 +96,8 @@ struct ContentView: View {
                 //pick a random word or use "silkworm as a sensible default
                 rootWord = allWords.randomElement() ?? "silkworm"
                 //arriving here means everything worked, so we I exit.
+                usedWords = [String]()
+                //this reset our used word array
                 return
             }
         }
@@ -120,6 +137,10 @@ struct ContentView: View {
         errorMessage = message
         showingError = true
         
+    }
+    func scoreCalculation() {
+        playerScore += (newWord.count + 1)
+        //if a player enters a correct word, the plater earns a point + the points equal to the length of given word.
     }
 }
 
