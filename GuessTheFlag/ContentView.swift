@@ -15,6 +15,7 @@ struct ContentView: View {
     @State private var totalScore = 0
     @State private var tappedFlag = 0
     @State private var qCounter = 1
+    @State private var animationAmount = 0.0
     
     var body: some View {
         ZStack {
@@ -44,11 +45,14 @@ struct ContentView: View {
                         Button {
                             flagTapped(number)
                             //Flag was  tapped
-                        } label: {
+                            animationAmount += 360
+                        }
+                            label: {
                             Image(countries[number])
                                 .renderingMode(.original)
                                 .cornerRadius(20 )
                                 .shadow(radius: 5)
+                                .rotation3DEffect(.degrees(animationAmount), axis: (x: 0, y: 1, z: 0))
                         }
                     }
                 }
