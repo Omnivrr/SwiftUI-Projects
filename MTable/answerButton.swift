@@ -14,6 +14,7 @@ struct answerButton: View {
             .frame(width: 120, height: 90)
             .font(.system(size: 40, weight: .bold))
             .background(Color.blue)
+            .shadow(radius: 0.5)
             .foregroundColor(Color.black)
             .clipShape(RoundedRectangle(cornerRadius: 30))
             .padding()
