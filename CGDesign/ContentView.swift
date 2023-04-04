@@ -45,6 +45,7 @@ import SwiftUI
             Text("Width")
             Slider(value: $petalWidth, in: 0...100)
                 .padding(.horizontal)
+            
         }
     }
 }
@@ -54,3 +55,5 @@ struct ContentView_Previews: PreviewProvider {
         ContentView()
     }
 }
+
+// need to recheck the padding above to centralise the design.
