@@ -1,4 +1,4 @@
-// This is a SwiftUI view that creates a circle with multiple strokes around it, each with a different color.
+// This is a SwiftUI view // This is a SwiftUI view that creates a circle with multiple strokes around it, each with a different color.
 
 import SwiftUI
 struct ColorCyclingCircle: View {
@@ -24,6 +24,7 @@ struct ColorCyclingCircle: View {
 
             }
         }
+        .drawingGroup()
     }
     
     // This function calculates the color for each stroke based on a value and brightness.
