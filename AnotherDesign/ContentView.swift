@@ -15,7 +15,13 @@ struct ColorCyclingCircle: View {
                 // Create a circle with a certain inset and stroke color.
                 Circle()
                     .inset(by: Double(value))
-                    .strokeBorder(color(for: value, brightness: 1), lineWidth: 2)
+                    .strokeBorder(
+                        LinearGradient( gradient: Gradient(colors: [
+                        color(for: value, brightness: 1),
+                        color(for: value, brightness: 0.5),]),
+                                        startPoint: .top, endPoint: .bottom),
+                                                  lineWidth: 2 )
+
             }
         }
     }
