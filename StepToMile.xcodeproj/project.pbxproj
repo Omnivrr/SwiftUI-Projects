@@ -13,6 +13,7 @@
 		19A8EB4F29F5DF7400A880AD /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 19A8EB4E29F5DF7400A880AD /* Preview Assets.xcassets */; };
 		19A8EB5629F6015900A880AD /* Activity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19A8EB5529F6015900A880AD /* Activity.swift */; };
 		19A8EB5829F6027500A880AD /* Activities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19A8EB5729F6027500A880AD /* Activities.swift */; };
+		19A8EB5A29F8893300A880AD /* AddActivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19A8EB5929F8893300A880AD /* AddActivity.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,6 +24,7 @@
 		19A8EB4E29F5DF7400A880AD /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		19A8EB5529F6015900A880AD /* Activity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Activity.swift; sourceTree = "<group>"; };
 		19A8EB5729F6027500A880AD /* Activities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Activities.swift; sourceTree = "<group>"; };
+		19A8EB5929F8893300A880AD /* AddActivity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddActivity.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +59,7 @@
 			children = (
 				19A8EB4729F5DF6F00A880AD /* StepToMileApp.swift */,
 				19A8EB4929F5DF6F00A880AD /* ContentView.swift */,
+				19A8EB5929F8893300A880AD /* AddActivity.swift */,
 				19A8EB5529F6015900A880AD /* Activity.swift */,
 				19A8EB5729F6027500A880AD /* Activities.swift */,
 				19A8EB4B29F5DF7400A880AD /* Assets.xcassets */,
@@ -145,6 +148,7 @@
 			files = (
 				19A8EB5829F6027500A880AD /* Activities.swift in Sources */,
 				19A8EB5629F6015900A880AD /* Activity.swift in Sources */,
+				19A8EB5A29F8893300A880AD /* AddActivity.swift in Sources */,
 				19A8EB4A29F5DF6F00A880AD /* ContentView.swift in Sources */,
 				19A8EB4829F5DF6F00A880AD /* StepToMileApp.swift in Sources */,
 			);

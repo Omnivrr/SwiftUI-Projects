@@ -8,14 +8,26 @@
 import SwiftUI
 
 struct ContentView: View {
+    @StateObject var data = Activities()
+    @State private var addingNewActivity
+    
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundColor(.accentColor)
-            Text("Hello, world!")
+        NavigationView {
+            List(data.activities) { activity in
+                NavigationLink {
+                    Text("Detail view")
+                } label: {
+                    HStack {
+                        Text(activity.title)
+                        Spacer()
+                        Text(String(activity.completionCount))
+                    }
+                }
+            }
+            .navigationTitle("Step To Mile")
+            
+            
         }
-        .padding()
     }
 }
 
