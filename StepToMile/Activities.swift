@@ -18,11 +18,11 @@ class Activities: ObservableObject {
     }
     init(){
         if let saved = UserDefaults.standard.data(forKey: "Activities") {
-            if let decoded = try? JSONDecoder().decode([Activity]).self, from: saved) {
+            if let decoded = try? JSONDecoder().decode([Activity].self, from: saved) {
                 activities = decoded
-                returnn
+                return
             }
         }
+        activities = []
     }
-    activities = []
 }
