@@ -20,7 +20,7 @@ class Activities: ObservableObject {
         if let saved = UserDefaults.standard.data(forKey: "Activities") {
             if let decoded = try? JSONDecoder().decode([Activity]).self, from: saved) {
                 activities = decoded
-                return
+                returnn
             }
         }
     }
